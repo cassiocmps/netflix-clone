@@ -1,0 +1,110 @@
+:root { /* a raiz do documento, aqui usando para declarar variaveis, nesse caso as cores.*/
+    --vermelha: #e50914;
+    --preta: #141414;
+}
+
+* { /*o "*" se refere a todos os elementos do documento. essa tecnica de resetar as configurações se chama "reset css" e padroniza configurações padrões de diferentes navegadores.*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* 'box-sizing: border-box' garante que os elementos não passaem a border da caixa*/    
+}
+
+/*ELEMENTOS BASE*/
+
+body { /*qualquer mudança de configuração do body é herdada pelos elementos filhos.*/
+    background: var(--preta);
+    font-family: 'Arial', Times, serif;
+    color: white; 
+}
+
+header .logo{
+    margin-left: 5px; /*desgrudar a logo do lado esquerdo.*/
+    color: var(--vermelha);
+    font-family: 'Arial', Times;
+    font-size: 40px;
+}
+
+header nav a{
+    text-decoration: none; /*faz a retirada do sublinhado padrão de links.*/
+    color: #AAA;
+    margin-right: 10px;
+}
+
+header nav a:hover{ /*'hover' coloca as configurações citadas quando o usuário passa o mouse sobre.*/
+    color: #fff;
+}
+
+header .container{
+    display: flex; /*'display: flex' faz com que os elementos dentro da classe conainer sejam alinhados em linhas.*/
+    flex-direction: row; /* 'row' é o atributo padrão, deixado aqui somente para fins semanticos, mas se vc não declarar 'flex-direction', row é o valor padrão.*/
+    align-items: center;
+    justify-content: space-between; /*faz com que os elementos sejam separados por um espaço entre eles e consequentemente jogados para os cantos da box.*/
+}
+
+/*FILME PRINCIPAL*/
+
+.filme-principal{
+    font-size: 16px;
+    background: linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)100%), url('/javascript/netflix/img/capa-house.jpg');
+    
+    height: 400px;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /*justify-content sempre segue a direção do flex-direction*/
+    align-items: flex-start; /*o align-content acaba sendo sempre a inversão da direção do justify-content */
+}
+
+.filme-principal .descricao{
+    margin-top: 5%;
+    margin-bottom: 40px;
+}
+
+.filme-principal .titulo{
+    margin-top: 15%;
+    font-size: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.botao{
+    background-color: rgba(0,0,0,.50);
+    border:none;
+    color: white;
+    
+    padding: 15px 30px;
+    margin: 15px;
+    font-size: 12px;
+
+    cursor: pointer;
+    transition: .3s ease all;
+}
+
+.botao:hover{
+    background-color: white;
+    color: black;
+}
+
+.botao i{
+    margin-right: 8px; /*adiciona uma margem para distanciar um pouco o icone dos botoes.*/
+}
+
+.container{ /*aqui vc muda todos os containers.*/
+    margin-left: 20px;
+}
+
+.filme-principal .container{ /*e aqui somente os containers dentro de .filme-principal.*/
+    max-width: 500px;
+    /*width: 60%;*/
+}
+
+.box-filme{
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.carrosel-filmes{
+    margin-top: 5px;
+}
